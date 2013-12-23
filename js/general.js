@@ -7,6 +7,9 @@ function thumbs_rating_vote(ID, type)
 	// Check if the LocalStorage value exist. If do nothing.
 	
 	if (!localStorage.getItem(itemName)){
+		
+		// Prevent accidental (or intentional) multi-clicks
+		jQuery('.thumbs-rating-up,.thumbs-rating-down').removeAttr('onclick');
 	
 		// Data for the Ajax Request
 		
